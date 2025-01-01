@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasa Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        #chatbox {
+            width: 300px;
+            height: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        #messages {
+            flex: 1;
+            overflow-y: auto;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="chatbox">
+        <div id="messages"></div>
+        <input type="text" id="user_input" placeholder="Type a message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        function sendMessage() {
+            const userMessage = document.getElementById("user_input").value;
+            const messagesDiv = document.getElementById("messages");
+
+            // Display user message
+            messagesDiv.innerHTML += `<div><strong>You:</strong> ${userMessage}</div>`;
+
+            // Clear input field
+            document.getElementById("user_input").value = '';
+
+            // Send message to Rasa's API
+            fetch('http://localhost:5005/webhooks/rest/webhook', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: userMessage })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display Rasa response
+                data.forEach(message => {
+                    messagesDiv.innerHTML += `<div><strong>Bot:</strong> ${message.text}</div>`;
+                });
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - upload_paper
+  - check_status
+  - contact_support
+
+responses:
+  utter_greet:
+    - text: "Hey! How are you?"
+
+  utter_cheer_up:
+    - text: "Here is something to cheer you up:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+    - text: "Did that help you?"
+
+  utter_happy:
+    - text: "Great, carry on!"
+
+  utter_goodbye:
+    - text: "Bye"
+
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+
+  utter_upload_paper:
+    - text: "To upload a research paper, log in and click on the 'Upload Paper' button."
+
+  utter_check_status:
+    - text: "You can check the status of your paper in the 'My Submissions' section after logging in."
+
+  utter_contact_support:
+    - text: "For support, please email us at support@papersystem.com or call +1234567890."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

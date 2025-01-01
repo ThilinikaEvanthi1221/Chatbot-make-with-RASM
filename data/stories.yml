@@ -1,0 +1,44 @@
+version: "3.1"
+
+stories:
+  - story: happy path
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_great
+      - action: utter_happy
+
+  - story: sad path 1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: affirm
+      - action: utter_happy
+
+  - story: sad path 2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: deny
+      - action: utter_goodbye
+
+  - story: upload paper FAQ
+    steps:
+      - intent: upload_paper
+      - action: utter_upload_paper
+
+  - story: check status FAQ
+    steps:
+      - intent: check_status
+      - action: utter_check_status
+
+  - story: contact support FAQ
+    steps:
+      - intent: contact_support
+      - action: utter_contact_support
