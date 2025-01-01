@@ -28,17 +28,19 @@ stories:
       - intent: deny
       - action: utter_goodbye
 
-  - story: upload paper FAQ
+  - story: Choose Coffee
     steps:
-      - intent: upload_paper
-      - action: utter_upload_paper
+      - intent: choose_coffee
+      - action: utter_choose_coffee
 
-  - story: check status FAQ
+  - story: Daily Routine Suggestions
     steps:
-      - intent: check_status
-      - action: utter_check_status
+      - intent: daily_routine
+      - action: utter_daily_routine
 
-  - story: contact support FAQ
+  - story: Choose Coffee and Daily Routine
     steps:
-      - intent: contact_support
-      - action: utter_contact_support
+      - intent: choose_coffee
+      - action: utter_choose_coffee
+      - intent: daily_routine
+      - action: utter_daily_routine
