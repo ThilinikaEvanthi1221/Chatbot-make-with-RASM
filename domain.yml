@@ -8,9 +8,8 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
-  - upload_paper
-  - check_status
-  - contact_support
+  - choose_coffee
+  - daily_routine
 
 responses:
   utter_greet:
@@ -32,14 +31,17 @@ responses:
   utter_iamabot:
     - text: "I am a bot, powered by Rasa."
 
-  utter_upload_paper:
-    - text: "To upload a research paper, log in and click on the 'Upload Paper' button."
+  utter_choose_coffee:
+    - text: "It depends on what you're in the mood for! If you need an energy boost, an espresso or a strong black coffee might be the way to go. If you're looking for something creamy and comforting, a latte or cappuccino would be great. What are you feeling today?"
+    - text: "For a refreshing change, how about trying a cold brew or an iced coffee? If you're looking for something cozy, a hot cappuccino could be perfect. Do you want something strong or light?"
+    - text: "If you want something rich and creamy, go for a latte. If you're craving something bold, an espresso or black coffee is the way to go. What’s your preference?"
 
-  utter_check_status:
-    - text: "You can check the status of your paper in the 'My Submissions' section after logging in."
-
-  utter_contact_support:
-    - text: "For support, please email us at support@papersystem.com or call +1234567890."
+  utter_daily_routine:
+    - text: "A good daily routine starts with a morning that sets the tone for the rest of the day. Try waking up early, having a healthy breakfast, and setting clear goals for the day. Stay active, take breaks, and prioritize self-care in the evening."
+    - text: "To organize your daily schedule, start with your top priorities in the morning, followed by less demanding tasks in the afternoon. Make time for breaks and ensure you have a consistent bedtime to help you recharge for the next day."
+    - text: "A great daily routine involves balancing work, rest, and activities that bring joy. Start your day with something productive or energizing, incorporate a healthy lunch, take breaks, and end the day with relaxation or a hobby."
+    - text: "To improve your routine, focus on consistency. Set specific times for eating, working, and resting. Include activities that help you stay motivated and energized, like exercise or reading."
+    - text: "For a productive morning, try setting a goal for the day, drinking water first thing, and having a nutritious breakfast. Your evening routine should include winding down activities, like reading or meditation, to help you sleep well."
 
 session_config:
   session_expiration_time: 60

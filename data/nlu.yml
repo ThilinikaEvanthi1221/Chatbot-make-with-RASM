@@ -90,20 +90,28 @@ nlu:
       - am I talking to a bot?
       - am I talking to a human?
 
-  - intent: upload_paper
+  - intent: choose_coffee
     examples: |
-      - How do I upload a research paper?
-      - Can you tell me how to upload a paper?
-      - I want to upload a paper. How can I do that?
+      - What type of coffee should I choose today?
+      - I can't decide which coffee to get. Can you help?
+      - Should I have an espresso or a latte today?
+      - What’s the best coffee for a morning boost?
+      - Which coffee is best for relaxing?
+      - Should I try a new coffee flavor today?
+      - I need help choosing between cappuccino and black coffee.
+      - What’s your recommendation for a refreshing coffee?
+      - Which coffee is perfect for a cold day?
+      - What’s the most popular coffee choice right now?
 
-  - intent: check_status
+  - intent: daily_routine
     examples: |
-      - How can I check the status of my paper?
-      - Where can I see my paper's status?
-      - I want to know the review status of my paper.
-
-  - intent: contact_support
-    examples: |
-      - How do I contact support?
-      - I need help. Whom should I contact?
-      - Can I talk to someone for help?
+      - Can you suggest a good daily routine?
+      - How do I start my day productively?
+      - What is a good morning routine to follow?
+      - Can you help me organize my daily schedule?
+      - What should I include in my evening routine?
+      - How can I improve my daily habits?
+      - What’s the best routine for a balanced day?
+      - How do I create a morning routine for success?
+      - Can you give me tips for sticking to my daily routine?
+      - What should I do to stay motivated throughout the day?
